@@ -12,6 +12,14 @@ Rectangle::Rectangle(const Rectangle &other){
 
 }
 
+Rectangle::Rectangle(int l, int w, std::string &colour, int x, int y)
+{
+}
+
+Rectangle::~Rectangle()
+{
+}
+
 Shape *Rectangle::clone(){
     return new Rectangle(*this);
 }
