@@ -6,23 +6,20 @@
 
 class Square : public Shape
 {
-private:
+/*private:
     int length;
     int width;
     std::string colour;
     int position_x;
     int position_y;
-
+*/
 public:
     Square();
-    Square(int size, std::string &colour, int x, int y);
+    Square(const Square &other);
+    Square(int length, int width, std::string &colour, int x, int y);
     ~Square();
-    void moveSquare();
 
     Shape *clone();
     std::string toString();
-    void moveSquare(int x, int y);
-    void resizeSquare(int len, int w);
-    void recolourSquare(std::string &col);
 };
 #endif
