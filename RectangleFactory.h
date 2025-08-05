@@ -4,8 +4,10 @@
 #include"Shape.h"
 #include"ShapeFactory.h"
 #include"Rectangle.h"
+#include <sstream>
 
 class Shape;
+class Rectangle;
 
 class RectangleFactory:public ShapeFactory{
     public:
