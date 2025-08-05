@@ -9,6 +9,8 @@ class Shape;
 class TextboxFactory:public ShapeFactory{
     public:
         Shape* createShape();
+        Shape* createShape(int length, int width, std::string &colour, int x, int y);
+        Shape* copyshape(Shape &other);
         void toString();
 };
 

@@ -9,8 +9,10 @@ class Shape;
 
 class ShapeFactory{
     protected:
-        virtual Shape* createShape(){cout<<"implement Creation in subclasses"<<endl;};
-        virtual void toString(){{cout<<"implement toString in subclasses"<<endl;}};
+        virtual Shape* createShape()=0;
+        virtual Shape* createShape(int length, int width, std::string &colour, int x, int y)=0;
+        virtual Shape* copyshape(Shape &other)=0;
+        virtual void toString()=0;
         virtual ~ShapeFactory();
 };
 
