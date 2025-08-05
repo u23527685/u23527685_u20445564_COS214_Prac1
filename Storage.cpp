@@ -21,3 +21,7 @@ Memento* Storage::getMemento(){
     mementos.pop_front();
     return recent;
 }
+
+Storage::Storage()
+{
+}
