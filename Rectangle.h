@@ -6,15 +6,16 @@
 
 class Rectangle : public Shape
 {
-private:
+/*private:
     std::string colour;
     int width;
     int position_y;
     int length;
     int position_x;
-
+*/
 public:
     Rectangle();
+    Rectangle(const Rectangle &other);
     Rectangle(int l, int w, std::string &colour, int x, int y);
     ~Rectangle();
 

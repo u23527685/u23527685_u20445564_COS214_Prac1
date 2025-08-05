@@ -3,7 +3,16 @@
 #include "Shape.h"
 #include "Rectangle.h"
 
-class Rectangle : public Shape
+using namespace std;
+
+Rectangle::Rectangle():Shape(10,5, *(new string("blue")),0,0){
+}
+
+Rectangle::Rectangle(const Rectangle &other){
+    
+}
+
+/*class Rectangle : public Shape
 {
 private:
     std::string colour;
@@ -13,7 +22,7 @@ private:
     int position_x;
 
 public:
-    Rectangle(int len = 10, int w = 5, std::string &col = "blue", int x = 0, int y = 0)
+    Rectangle(int len = 10, int w = 5, std::string &col =(std::string)"blue", int x = 0, int y = 0)
         : Shape(len, w, col, x, y),
           colour(col), length(len), position_y(y), width(w), position_x(x) {}
 
@@ -57,4 +66,4 @@ public:
     {
         colour = col;
     }
-};
+};*/
