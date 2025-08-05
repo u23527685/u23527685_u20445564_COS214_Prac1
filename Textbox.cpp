@@ -2,22 +2,28 @@
 #include "Shape.h"
 #include <sstream>
 
+using namespace std;
+
+Textbox::Textbox(const Textbox &other){}
+
 Textbox::Textbox()
-    : length(1), width(3), colour("black"), position_x(0), position_y(0), text("Default") {}
+    : Shape(10,20,*(new string("black")),0,0){
+        text="default";
+    }
 
 Textbox::Textbox(int l, int w, std::string &colour, int x, int y, std::string &txt)
-    : length(l), width(w), colour(colour), position_x(x), position_y(y), text(txt) {}
+    : Shape(l,w,colour,x,y), text(txt) {}
 
 Textbox::~Textbox() {}
 
 Shape* Textbox::clone()
 {
-    return new Textbox(length, width, colour, position_x, position_y, text);
+    return new Textbox(*this);
 }
 
 std::string Textbox::toString()
 {
-    std::ostringstream out;
+    /*std::ostringstream out;
     out << "Textbox (length=" << length
         << ", width=" << width
         << ", colour=" << colour
@@ -25,20 +31,9 @@ std::string Textbox::toString()
         << ", y=" << position_y
         << ", text=\"" << text << "\")";
     return out.str();
-}
-void Textbox::moveTextbox(int x, int y)
-    {
-        position_x = x;
-        position_y = y;
-    }
-
-void Textbox::resizeTextbox(int len, int w)
-{
-    length = len;
-    width = w;
+    */
 }
 
-void Textbox::recolourTextbox(std::string &col)
-{
-    colour = col;
+void Textbox::changeText(string txt){
+    text=txt;
 }
