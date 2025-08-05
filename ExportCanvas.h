@@ -10,7 +10,7 @@ class ExportCanvas{
         void renderElements();
         virtual void saveToFile();
     public:
-        void export();
+        void exportToFile();
         ExportCanvas(Canvas* canvas);
         ~ExportCanvas();   
 };

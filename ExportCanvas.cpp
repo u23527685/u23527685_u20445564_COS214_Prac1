@@ -19,7 +19,7 @@ ExportCanvas::ExportCanvas(Canvas *canvas)
 ExportCanvas::~ExportCanvas()
 {
 }
-void ExportCanvas::export()
+void ExportCanvas::exportToFile()
 {
     // prepareCanvas();
     // renderElements();
