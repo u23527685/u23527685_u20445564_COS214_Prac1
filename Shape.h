@@ -16,7 +16,6 @@ public:
     Shape();
     Shape(int length, int width, std::string &colour, int x, int y);
     ~Shape();
-
     Shape *clone() = 0;
     std::string toString() = 0;
 };

@@ -18,7 +18,9 @@ public:
     Textbox();
     Textbox(int l, int w, std::string &colour, int x, int y, std::string &text);
     ~Textbox();
-
+    void moveTextbox(int x, int y);
+    void resizeTextbox(int len, int w);
+    void recolourTextbox(std::string &col);
     Shape *clone();
     std::string toString();
 };

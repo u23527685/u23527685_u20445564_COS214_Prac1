@@ -25,19 +25,19 @@ std::string Square::toString()
         << ", y=" << position_y << ")";
     return out.str();
 }
-void moveSquare(int x, int y)
-    {
-        position_x = x;
-        position_y = y;
-    }
+void Square::moveSquare(int x, int y)
+{
+    position_x = x;
+    position_y = y;
+}
 
-void resizeSquare(int len, int w)
+void Square::resizeSquare(int len, int w)
 {
     length = len;
     width = w;
 }
 
-void recolourSquare(std::string &col)
+void Square::recolourSquare(std::string &col)
 {
     colour = col;
 }

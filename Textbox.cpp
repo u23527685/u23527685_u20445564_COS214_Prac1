@@ -26,19 +26,19 @@ std::string Textbox::toString()
         << ", text=\"" << text << "\")";
     return out.str();
 }
-void moveTextbox(int x, int y)
+void Textbox::moveTextbox(int x, int y)
     {
         position_x = x;
         position_y = y;
     }
 
-void resizeTextbox(int len, int w)
+void Textbox::resizeTextbox(int len, int w)
 {
     length = len;
     width = w;
 }
 
-void recolourTextbox(std::string &col)
+void Textbox::recolourTextbox(std::string &col)
 {
     colour = col;
 }
