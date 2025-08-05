@@ -6,4 +6,64 @@ Shape::Shape() : length(0), width(0), colour("black"), position_x(0), position_y
 Shape::Shape(int length, int width, std::string &colour, int x, int y)
     : length(length), width(width), colour(colour), position_x(x), position_y(y) {}
 
+Shape::Shape(const Shape &other)
+{
+    this->length = other.length;
+    this->width = other.width;
+    this->colour = other.colour;
+    this->position_x = other.position_x;
+    this->position_y = other.position_y;
+}
+
 Shape::~Shape() {}
+
+int Shape::getLength() const
+{
+    return this->length;
+}
+
+int Shape::getWidth() const
+{
+    return this->width;
+}
+
+std::string Shape::getColour() const
+{
+    return this->colour;
+}
+
+int Shape::getPosition_x() const
+{
+    return this->position_x;
+}
+
+int Shape::getPosition_y() const
+{
+    return this->position_y;
+}
+
+void Shape::setLength(int length)
+{
+    this->length = length;
+
+}
+
+void Shape::setWidth(int width)
+{
+    this->width = width;
+}
+
+void Shape::setColour(const std::string &colour)
+{
+    this->colour = colour;
+}
+
+void Shape::setPosition_x(int x)
+{
+    this->position_x = x;
+}
+
+void Shape::setPosition_y(int y)
+{
+    this->position_y = y;
+}
