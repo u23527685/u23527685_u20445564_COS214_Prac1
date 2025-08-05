@@ -15,10 +15,11 @@ private:
 public:
     Shape();
     Shape(int length, int width, std::string &colour, int x, int y);
-    ~Shape();
+    Shape(const Shape &other);
+    virtual ~Shape()=0;
 
-    Shape *clone() = 0;
-    std::string toString() = 0;
+    virtual Shape *clone() = 0;
+    virtual std::string toString() = 0;
 };
 
 #endif

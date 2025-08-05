@@ -17,6 +17,7 @@ public:
     Square();
     Square(int size, std::string &colour, int x, int y);
     ~Square();
+    void moveSquare();
 
     Shape *clone();
     std::string toString();
