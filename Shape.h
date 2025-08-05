@@ -16,7 +16,7 @@ public:
     Shape();
     Shape(int length, int width, std::string &colour, int x, int y);
     Shape(const Shape &other);
-    virtual ~Shape()=0;
+    virtual ~Shape();
     int getLength() const;
     int getWidth() const;
     std::string getColour() const;
@@ -33,8 +33,8 @@ public:
     void resizeShape(int len, int w);
     void recolourShape(std::string &col);
 
-    virtual Shape *clone() = 0;
-    virtual std::string toString() = 0;
+    virtual Shape *clone();
+    virtual std::string toString();
 };
 
 #endif
