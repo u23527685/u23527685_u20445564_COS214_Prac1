@@ -60,10 +60,27 @@ void Shape::setColour(const std::string &colour)
 
 void Shape::setPosition_x(int x)
 {
-    this->position_x = x;
+    position_x = x;
 }
 
 void Shape::setPosition_y(int y)
 {
-    this->position_y = y;
+    position_y = y;
+}
+
+void Shape::moveShape(int x, int y)
+{
+    position_x = x;
+    position_y = y;
+}
+
+void Shape::resizeShape(int len, int w)
+{
+    length = len;
+    width = w;
+}
+
+void Shape::recolourShape(std::string &col)
+{
+    colour = col;
 }

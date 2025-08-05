@@ -29,9 +29,9 @@ public:
     void setPosition_x(int x);  
     void setPosition_y(int y);
 
-    virtual void moveShape(int x, int y) = 0;
-    virtual void resizeShape(int len, int w) = 0;
-    virtual void recolourShape(std::string &col) = 0;
+    void moveShape(int x, int y);
+    void resizeShape(int len, int w);
+    void recolourShape(std::string &col);
 
     virtual Shape *clone() = 0;
     virtual std::string toString() = 0;
