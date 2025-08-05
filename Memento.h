@@ -3,7 +3,7 @@
 
 using namespace std;
 
-#include "Shape.h";
+#include "Shape.h"
 class Shape;
 class Canvas;
 

@@ -33,7 +33,7 @@ public:
     void resizeShape(int len, int w);
     void recolourShape(std::string &col);
 
-    virtual Shape *clone();
+    virtual Shape *clone(){return new Shape(*this);}
     virtual std::string toString();
 };
 

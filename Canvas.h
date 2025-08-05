@@ -15,10 +15,13 @@ class Canvas{
         ~Canvas();
         Memento* captureCurrent();
         void undoAction(Memento* prev);
-        void operation();
+        void exPortfile();
+        void addShape(Shape* newShape);
+        void print();
     private:
         Shape* shapes;
         int size;
+        int capacity=0;
 };
 
 #endif

@@ -21,7 +21,7 @@ public:
     ~Textbox();
     Shape *clone();
     std::string toString();
-    void changeText(string txt);
+    void changeText(std::string txt);
 };
 
 #endif
