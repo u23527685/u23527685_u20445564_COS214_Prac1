@@ -41,3 +41,4 @@ void Square::recolourSquare(std::string &col)
 {
     colour = col;
 }
+
