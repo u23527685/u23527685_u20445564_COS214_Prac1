@@ -7,8 +7,8 @@ Square::Square():Shape(10,10,*(new string("black")),0,0){}
 
 // copy
 
-Square::Square(const Square &other){
-    
+Square::Square(const Square &other):Shape(other){
+
 }
 Square::Square(int length, int width, std::string &colour, int x, int y)
     : Shape(length,width,colour,x,y) {}
@@ -22,11 +22,12 @@ Shape *Square::clone()
 
 std::string Square::toString()
 {
-    /*std::ostringstream out;
-    out << "Square (size=" << length
-        << ", colour=" << colour
-        << ", x=" << position_x
-        << ", y=" << position_y << ")";
-    return out.str();*/
+    std::ostringstream out;
+    out << "Square (length=" << getLength()
+        <<", width="<<getWidth()
+        << ", colour=" << getColour()
+        << ", x=" << getPosition_x()
+        << ", y=" << getPosition_y() << ")";
+    return out.str();
 }
 

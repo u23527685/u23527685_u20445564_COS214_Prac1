@@ -4,7 +4,9 @@
 
 using namespace std;
 
-Textbox::Textbox(const Textbox &other){}
+Textbox::Textbox(const Textbox &other):Shape(other){
+    this->text=other.text;
+}
 
 Textbox::Textbox()
     : Shape(10,20,*(new string("black")),0,0){
@@ -23,15 +25,14 @@ Shape* Textbox::clone()
 
 std::string Textbox::toString()
 {
-    /*std::ostringstream out;
-    out << "Textbox (length=" << length
-        << ", width=" << width
-        << ", colour=" << colour
-        << ", x=" << position_x
-        << ", y=" << position_y
-        << ", text=\"" << text << "\")";
+   std::ostringstream out;
+    out << "Textbox (length=" << getLength()
+        <<", width="<<getWidth()
+        << ", colour=" << getColour()
+        << ", x=" << getPosition_x()
+        << ", y=" << getPosition_y() 
+        <<", text="<<text<< ")";
     return out.str();
-    */
 }
 
 void Textbox::changeText(string txt){
