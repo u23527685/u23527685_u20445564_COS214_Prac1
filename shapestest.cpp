@@ -13,12 +13,24 @@ using namespace std;
 int main(){
     Canvas c= Canvas();
     Storage s= Storage();
-    ShapeFactory* factory=new ShapeFactory[3]; 
-    factory[0]= SquareFactory();
-    factory[1]= RectangleFactory();
-    factory[2]= TextboxFactory();
+    ShapeFactory** factory=new ShapeFactory*(); 
+    factory[0]=new SquareFactory();
+    factory[1]= new RectangleFactory();
+    factory[2]= new TextboxFactory();
+    cout<<"20 shapes"<<endl;
     for(int i=0;i<20;i++){
-        c.addShape(factory[i%3].work());
+        c.addShape(factory[i%3]->work());
     }
+    c.print();
+
+    s.saveMemento(c.captureCurrent());
+
+    cout<<"40 shapes"<<endl;
+    for(int i=0;i<20;i++){
+        c.addShape(factory[i%3]->work());
+    }
+    c.print();
+    c.undoAction(s.getMemento());
+    cout<<"20 shapes"<<endl;
     c.print();
 }

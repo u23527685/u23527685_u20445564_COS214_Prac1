@@ -19,8 +19,8 @@ public:
     Textbox(const Textbox &other);
     Textbox(int l, int w, std::string &colour, int x, int y, std::string &text);
     ~Textbox();
-    Shape *clone();
-    std::string toString();
+    Shape *clone()override;
+    std::string toString() override;
     void changeText(std::string txt);
 };
 

@@ -14,8 +14,9 @@ class Memento{
         Memento(const Memento &other);
         Memento(Shape* elements,int size);
         bool isNULL();
+        ~Memento();
     private:
-        Shape* shapes;
+        Shape** shapes;
         int size;
 };
 

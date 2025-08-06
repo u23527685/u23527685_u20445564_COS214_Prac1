@@ -11,8 +11,8 @@ class Rectangle;
 
 class RectangleFactory:public ShapeFactory{
     public:
-        Shape* createShape();
-        Shape* createShape(int length, int width, std::string &colour, int x, int y);
+        Shape* createShape()override;
+        Shape* createShape(int length, int width, std::string &colour, int x, int y)override;
         Shape* copyshape(Rectangle &other);
         void toString();
 };

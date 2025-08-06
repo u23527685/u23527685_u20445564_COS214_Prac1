@@ -9,10 +9,10 @@ class Shape;
 
 class ShapeFactory{
     protected:
-        virtual Shape* createShape();
-        virtual Shape* createShape(int length, int width, std::string &colour, int x, int y);
-        virtual Shape* copyshape(Shape &other);
-        virtual void toString();
+        virtual Shape* createShape()=0;
+        virtual Shape* createShape(int length, int width, std::string &colour, int x, int y)=0;
+        virtual Shape* copyshape(Shape &other){return this->copyshape(other);};
+        virtual void toString(){};
     public:
         virtual ~ShapeFactory();
         Shape* work(){
