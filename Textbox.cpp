@@ -1,6 +1,7 @@
 #include "Textbox.h"
 #include "Shape.h"
 #include <sstream>
+#include <string>
 
 using namespace std;
 

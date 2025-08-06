@@ -1,13 +1,14 @@
 #include "Memento.h"
+#include "Shape.h"
 class Shape;
 
 using namespace std;
 
 Memento::Memento(Shape* elements,int size){
     this->size=size;
-    shapes= new Shape [size];
+    shapes= new Shape* [size];
     for(int i=0;i<size;i++){
-        shapes[i]=Shape(elements[i]);
+        shapes[i]=&elements[i];
     }
 }
 
@@ -22,8 +23,12 @@ bool Memento::isNULL(){
 
 Memento::Memento(const Memento &other){
     size=other.size;
-    shapes= new Shape [size];
+    shapes= new Shape* [size];
     for(int i=0;i<size;i++){
         shapes[i]=other.shapes[i];
     }
+}
+
+Memento:: ~Memento(){
+    delete[]shapes;
 }

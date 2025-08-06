@@ -11,9 +11,13 @@ class ShapeFactory{
     protected:
         virtual Shape* createShape()=0;
         virtual Shape* createShape(int length, int width, std::string &colour, int x, int y)=0;
-        virtual Shape* copyshape(Shape &other)=0;
-        virtual void toString()=0;
+        virtual Shape* copyshape(Shape &other){return this->copyshape(other);};
+        virtual void toString(){};
+    public:
         virtual ~ShapeFactory();
+        Shape* work(){
+            return createShape();
+        }
 };
 
 #endif

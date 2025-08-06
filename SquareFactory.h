@@ -15,6 +15,7 @@ class SquareFactory:public ShapeFactory{
         Shape* createShape(int length, int width, std::string &colour, int x, int y);
         Shape* copyshape(Square &other);
         void toString();
+        
 };
 
 #endif

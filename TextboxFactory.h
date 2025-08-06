@@ -5,11 +5,12 @@
 #include "ShapeFactory.h"
 #include "Textbox.h"
 class Shape;
+class Textbox;
 
 class TextboxFactory:public ShapeFactory{
     public:
         Shape* createShape();
-        Shape* createShape(int length, int width, std::string &colour, int x, int y, std::string &text);
+        Shape* createShape(int length, int width, std::string &colour, int x, int y)override;
         Shape* copyshape(Textbox &other);
         void toString();
 };

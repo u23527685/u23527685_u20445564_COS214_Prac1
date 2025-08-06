@@ -19,7 +19,7 @@ public:
     Square(int length, int width, std::string &colour, int x, int y);
     ~Square();
 
-    Shape *clone();
-    std::string toString();
+    Shape *clone()override;
+    std::string toString() override;
 };
 #endif
