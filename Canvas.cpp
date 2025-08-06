@@ -23,3 +23,7 @@ void Canvas:: undoAction(Memento* prev){
         shapes[i]=prev->shapes[i];
     }
 }
+
+void Canvas::operation()
+{
+}
