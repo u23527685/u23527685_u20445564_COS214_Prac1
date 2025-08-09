@@ -22,7 +22,7 @@ class Canvas{
         void addShape(Shape* newShape);
         void print();
         void createExporter(const string& type);
-        
+        void exportThis();
     private:
         
         Shape** shapes;

@@ -120,3 +120,8 @@ void Canvas::createExporter(const string &type)
         exportCanvas = nullptr;
     }
 }
+
+void Canvas::exportThis()
+{
+    exportCanvas->exportToFile();
+}
