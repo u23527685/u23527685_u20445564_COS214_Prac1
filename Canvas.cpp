@@ -10,18 +10,11 @@ using namespace std;
 class Memento;
 
 Canvas::~Canvas(){
-<<<<<<< HEAD
     for(int i=0;i<size;i++){
         if (shapes[i] != nullptr){
             delete shapes[i];
             shapes[i]=nullptr;
         }
-=======
-    for(int i=0;i<capacity;i++){
-        if(shapes[i]!=nullptr)
-            delete shapes[i];
-        shapes[i]=nullptr;
->>>>>>> 47b843a (exportcanvas segfault 1 fix)
     }
     delete[]shapes;
     shapes=nullptr;
