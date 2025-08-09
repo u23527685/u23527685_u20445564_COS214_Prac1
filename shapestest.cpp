@@ -32,6 +32,7 @@ int main(){
     }
     c.print();
     c.createExporter("PNG");
+    c.exportThis();
 
     c.undoAction(s.getMemento());
     cout<<"20 shapes"<<endl;

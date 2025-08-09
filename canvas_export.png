@@ -1,0 +1,10 @@
+PNG Export File
+Format: Portable Network Graphics
+Type: Raster Image
+Canvas Data:
+  Width: 800
+  Height: 600
+  Color Depth: 24-bit RGB
+  Compression: Lossless
+Exported Elements:
+  [Shape data converted to pixel format - see console output]

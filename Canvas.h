@@ -18,7 +18,7 @@ class Canvas{
         ~Canvas();
         Memento* captureCurrent();
         void undoAction(Memento* prev);
-        // void exportfile();
+        void exportfile();
         void addShape(Shape* newShape);
         void print();
         void createExporter(const string& type);
