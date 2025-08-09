@@ -13,7 +13,7 @@ using namespace std;
 int main(){
     Canvas c= Canvas();
     Storage s= Storage();
-    ShapeFactory** factory=new ShapeFactory*(); 
+    ShapeFactory** factory=new ShapeFactory*[3]; 
     factory[0]=new SquareFactory();
     factory[1]= new RectangleFactory();
     factory[2]= new TextboxFactory();
@@ -41,6 +41,7 @@ int main(){
 
     for(int i=0;i<3;i++){
         delete factory[i];
+        factory[i]=nullptr;
     }
     delete[] factory;
     factory= nullptr;
