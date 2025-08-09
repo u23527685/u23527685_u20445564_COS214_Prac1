@@ -123,5 +123,6 @@ void Canvas::createExporter(const string &type)
 
 void Canvas::exportThis()
 {
-    exportCanvas->exportToFile();
+    if(exportCanvas!=nullptr)
+        exportCanvas->exportToFile();
 }

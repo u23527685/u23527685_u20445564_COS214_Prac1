@@ -31,6 +31,7 @@ int main(){
         //testing the png
     }
     c.print();
+    c.exportThis();
     c.createExporter("PNG");
     c.exportThis();
 
@@ -42,6 +43,15 @@ int main(){
     }
     cout<<"25 shapes"<<endl;
     c.print();
+    c.exportThis();
+    Canvas d= Canvas();
+    cout<<"20 shapes"<<endl;
+    for(int i=0;i<20;i++){
+        d.addShape(factory[i%3]->work());
+    }
+    d.createExporter("PDF");
+    d.print();
+    d.exportThis();
 
     for(int i=0;i<3;i++){
         delete factory[i];
