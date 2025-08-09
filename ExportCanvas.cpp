@@ -14,7 +14,7 @@ void ExportCanvas::saveToFile()
 
 ExportCanvas::~ExportCanvas()
 {
-    delete canvas;
+    canvas = nullptr;
 }
 void ExportCanvas::printCanvas()
 {
@@ -23,9 +23,9 @@ void ExportCanvas::printCanvas()
 }
 void ExportCanvas::exportToFile()
 {
-    // prepareCanvas();
-    // renderElements();
-    // saveToFile();
+    prepareCanvas();
+    renderElements();
+    saveToFile();
 }
 
 

@@ -11,8 +11,10 @@ class Memento;
 
 Canvas::~Canvas(){
     for(int i=0;i<size;i++){
-        delete shapes[i];
-        shapes[i]=nullptr;
+        if (shapes[i] != nullptr){
+            delete shapes[i];
+            shapes[i]=nullptr;
+        }
     }
     delete[]shapes;
     shapes=nullptr;
