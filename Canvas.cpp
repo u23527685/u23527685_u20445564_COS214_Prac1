@@ -10,15 +10,22 @@ using namespace std;
 class Memento;
 
 Canvas::~Canvas(){
+<<<<<<< HEAD
     for(int i=0;i<size;i++){
         if (shapes[i] != nullptr){
             delete shapes[i];
             shapes[i]=nullptr;
         }
+=======
+    for(int i=0;i<capacity;i++){
+        if(shapes[i]!=nullptr)
+            delete shapes[i];
+        shapes[i]=nullptr;
+>>>>>>> 47b843a (exportcanvas segfault 1 fix)
     }
     delete[]shapes;
     shapes=nullptr;
-    if (exportCanvas){
+    if (exportCanvas!=nullptr){
         delete exportCanvas;
         exportCanvas = nullptr;
     }
@@ -26,6 +33,7 @@ Canvas::~Canvas(){
 }
 
 Canvas::Canvas(){
+    capacity=0;
     size=10;
     shapes= new Shape*[size];
     for(int i=0;i<size;i++){
@@ -43,16 +51,27 @@ void Canvas:: undoAction(Memento* prev){
         return;
     }
     for(int i=0;i<capacity;i++){
-        delete shapes[i];
+        if(shapes[i]!=nullptr)
+            delete shapes[i];
         shapes[i]=nullptr;
     }
     delete[]shapes;
-    size=prev->capacity;
     capacity=prev->capacity;
-    shapes=new Shape*[size];
-    Shape** o=prev->getShapes();
+    if(capacity > size) {
+        while(size<=capacity){
+            size=size*2;
+        }
+        delete[] shapes;
+        size = capacity * 2;  // Give some extra space
+        shapes = new Shape*[size];
+    }
     for(int i=0;i<size;i++){
-        shapes[i]=o[i]->clone();
+        shapes[i] = nullptr;
+    }
+    Shape** o=prev->getShapes();
+    for(int i=0;i<capacity;i++){
+        if(o[i]!=nullptr)
+            shapes[i]=o[i]->clone();
     }
 }
 
@@ -66,11 +85,8 @@ void Canvas:: addShape(Shape* newShape){
         return ;
     }
     if(capacity>=size){
-        Shape** temp=new Shape*[size];
+        Shape** temp=shapes;
         int os=capacity;
-        for(int i=0;i<size;i++){
-            temp[i]=shapes[i]->clone();
-        }
         while(size<=capacity){
             size=size*2;
         }

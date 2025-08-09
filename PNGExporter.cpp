@@ -28,17 +28,6 @@ void PNGExporter::saveToFile() {
     }
 }
 
-void PNGExporter::exportToFile()
-{
-    cout << "Starting PNG export..." << endl;
-    
-    prepareCanvas();
-    renderElements();
-    saveToFile();
-    
-    cout << "PNG export completed!" << endl;
-}
-
 void PNGExporter::prepareCanvas()
 {
     //canvas information and export environment
