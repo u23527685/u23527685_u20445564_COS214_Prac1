@@ -4,16 +4,16 @@ class Shape;
 
 using namespace std;
 
-Memento::Memento(Shape* elements,int size){
-    this->size=size;
-    shapes= new Shape* [size];
-    for(int i=0;i<size;i++){
-        shapes[i]=&elements[i];
+Memento::Memento(Shape** elements,int cap){
+    capacity=cap;
+    shapes= new Shape*[cap];
+    for(int i=0;i<cap;i++){
+        shapes[i]=elements[i]->clone();
     }
 }
 
 Memento::Memento(){
-    size=0;
+    capacity=0;
     shapes=nullptr;
 }
 
@@ -22,13 +22,17 @@ bool Memento::isNULL(){
 }
 
 Memento::Memento(const Memento &other){
-    size=other.size;
-    shapes= new Shape* [size];
-    for(int i=0;i<size;i++){
-        shapes[i]=other.shapes[i];
+    capacity=other.capacity;
+    shapes=new Shape*[capacity];
+    for(int i=0;i<capacity;i++){
+        shapes[i]=other.shapes[i]->clone();
     }
 }
 
 Memento:: ~Memento(){
     delete[]shapes;
+}
+
+Shape** Memento::getShapes(){
+    return shapes;
 }

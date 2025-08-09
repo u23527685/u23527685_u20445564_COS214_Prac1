@@ -33,4 +33,15 @@ int main(){
     c.undoAction(s.getMemento());
     cout<<"20 shapes"<<endl;
     c.print();
+    for(int i=0;i<5;i++){
+        c.addShape(factory[i%3]->work());
+    }
+    cout<<"25 shapes"<<endl;
+    c.print();
+
+    for(int i=0;i<3;i++){
+        delete factory[i];
+    }
+    delete[] factory;
+    factory= nullptr;
 }

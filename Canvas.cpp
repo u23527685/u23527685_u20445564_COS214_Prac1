@@ -7,6 +7,10 @@ using namespace std;
 class Memento;
 
 Canvas::~Canvas(){
+    for(int i=0;i<size;i++){
+        delete shapes[i];
+        shapes[i]=nullptr;
+    }
     delete[]shapes;
     shapes=nullptr;
 }
@@ -14,24 +18,30 @@ Canvas::~Canvas(){
 Canvas::Canvas(){
     size=10;
     shapes= new Shape*[size];
+    for(int i=0;i<size;i++){
+        shapes[i] = nullptr;
+    }
 }
 
 Memento* Canvas:: captureCurrent(){
-    return new Memento(*shapes,size);
+    return new Memento(shapes,capacity);
 }
 
 void Canvas:: undoAction(Memento* prev){
     if(prev==nullptr){
         return;
     }
-    for(int i=0;i<size;i++){
+    for(int i=0;i<capacity;i++){
         delete shapes[i];
+        shapes[i]=nullptr;
     }
-    size=prev->size;
     delete[]shapes;
-    shapes= new Shape*[size];
+    size=prev->capacity;
+    capacity=prev->capacity;
+    shapes=new Shape*[size];
+    Shape** o=prev->getShapes();
     for(int i=0;i<size;i++){
-        shapes[i]=prev->shapes[i];
+        shapes[i]=o[i]->clone();
     }
 }
 
@@ -39,20 +49,25 @@ void Canvas:: addShape(Shape* newShape){
     if(newShape==nullptr){
         return ;
     }
-    if(capacity==size){
+    if(capacity>=size){
         Shape** temp=new Shape*[size];
-        int os=size;
+        int os=capacity;
         for(int i=0;i<size;i++){
-            temp[i]=shapes[i];
+            temp[i]=shapes[i]->clone();
         }
-        size*=2;
+        while(size<=capacity){
+            size=size*2;
+        }
         shapes= new Shape*[size];
+        for(int i=0;i<size;i++){
+            shapes[i] = nullptr;
+        }
         for(int i=0;i<os;i++){
             shapes[i]=temp[i];
         }
         shapes[capacity]=newShape;
-        delete[] temp;
         capacity++;
+        delete[] temp;
     }else{
         shapes[capacity]=newShape;
         capacity++;
@@ -61,6 +76,7 @@ void Canvas:: addShape(Shape* newShape){
 
 void Canvas::print(){
     for(int i=0;i<capacity;i++){
-        cout<<shapes[i]->toString()<<endl;
+        if(shapes[i]!=nullptr)
+            cout<<shapes[i]->toString()<<endl;
     }
 }

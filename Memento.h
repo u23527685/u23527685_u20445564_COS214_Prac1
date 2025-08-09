@@ -12,12 +12,13 @@ class Memento{
     public:
         Memento();
         Memento(const Memento &other);
-        Memento(Shape* elements,int size);
+        Memento(Shape** elements,int cap);
         bool isNULL();
         ~Memento();
+        Shape** getShapes();
     private:
         Shape** shapes;
-        int size;
+        int capacity;
 };
 
 
