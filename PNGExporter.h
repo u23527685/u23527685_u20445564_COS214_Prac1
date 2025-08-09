@@ -8,7 +8,6 @@ class PNGExporter : public ExportCanvas{
     public:
         PNGExporter(Canvas* canvas): ExportCanvas(canvas){}
         void saveToFile() override;
-        void exportToFile() override;
         void prepareCanvas() override;
         void renderElements() override;
         virtual ~PNGExporter() = default;

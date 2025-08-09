@@ -4,15 +4,6 @@
 #include <fstream>
 using namespace std;
 
-void PDFExporter::exportToFile()
-{
-    cout << "Starting PDF export..."<< endl;
-    prepareCanvas();
-    renderElements();
-    saveToFile();
-    cout<< "PDF export completed!"<< endl;
-}
-
 void PDFExporter::prepareCanvas()
 {
     cout << "Preparing canvas for PDF export..."<<endl;
