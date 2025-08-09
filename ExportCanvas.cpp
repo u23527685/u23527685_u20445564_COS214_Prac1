@@ -12,12 +12,14 @@ void ExportCanvas::saveToFile()
 {
 }
 
-ExportCanvas::ExportCanvas(Canvas *canvas)
-{
-}
-
 ExportCanvas::~ExportCanvas()
 {
+    delete canvas;
+}
+void ExportCanvas::printCanvas()
+{
+    if (!canvas) return;
+    canvas->print();
 }
 void ExportCanvas::exportToFile()
 {
@@ -25,3 +27,6 @@ void ExportCanvas::exportToFile()
     // renderElements();
     // saveToFile();
 }
+
+
+

@@ -14,7 +14,10 @@ SOURCES = shapestest.cpp \
           Shape.cpp \
           Square.cpp \
           Rectangle.cpp \
-          Textbox.cpp
+          Textbox.cpp\
+          ExportCanvas.cpp\
+          PDFExporter.cpp\
+          PNGExporter.cpp
 
 # Object files (derived from source files)
 OBJECTS = $(SOURCES:.cpp=.o)
@@ -29,7 +32,10 @@ HEADERS = Canvas.h \
           Shape.h \
           Square.h \
           Rectangle.h \
-          Textbox.h
+          Textbox.h\
+          ExportCanvas.h\
+          PNGExporter.h\
+          PDFExporter.h
 
 # Default target
 all: $(TARGET)

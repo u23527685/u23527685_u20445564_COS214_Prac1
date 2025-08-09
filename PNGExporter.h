@@ -5,7 +5,12 @@
 
 
 class PNGExporter : public ExportCanvas{
-    private:
-        void saveToFile();
+    public:
+        PNGExporter(Canvas* canvas): ExportCanvas(canvas){}
+        void saveToFile() override;
+        void exportToFile() override;
+        void prepareCanvas() override;
+        void renderElements() override;
+        virtual ~PNGExporter() = default;
 };
 #endif

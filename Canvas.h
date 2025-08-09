@@ -8,6 +8,9 @@ using namespace std;
 class Shape;
 class Memento;
 class Storage;
+class ExportCanvas;
+class PNGExporter;
+class PDFExporter;
 
 class Canvas{
     public:
@@ -15,13 +18,17 @@ class Canvas{
         ~Canvas();
         Memento* captureCurrent();
         void undoAction(Memento* prev);
-        void exPortfile(){};
+        // void exportfile();
         void addShape(Shape* newShape);
         void print();
+        void createExporter(const string& type);
+        
     private:
+        
         Shape** shapes;
         int size;
         int capacity=0;
+        ExportCanvas* exportCanvas;
 };
 
 #endif

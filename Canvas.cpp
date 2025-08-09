@@ -2,6 +2,9 @@ using namespace std;
 #include "Canvas.h"
 #include "Memento.h"
 #include "Memento.cpp"
+#include "ExportCanvas.h"
+#include "PDFExporter.h"
+#include "PNGExporter.h"
 #include<iostream>
 
 class Memento;
@@ -13,6 +16,11 @@ Canvas::~Canvas(){
     }
     delete[]shapes;
     shapes=nullptr;
+    if (exportCanvas){
+        delete exportCanvas;
+        exportCanvas = nullptr;
+    }
+    
 }
 
 Canvas::Canvas(){
@@ -21,6 +29,7 @@ Canvas::Canvas(){
     for(int i=0;i<size;i++){
         shapes[i] = nullptr;
     }
+    exportCanvas = nullptr;
 }
 
 Memento* Canvas:: captureCurrent(){
@@ -44,6 +53,11 @@ void Canvas:: undoAction(Memento* prev){
         shapes[i]=o[i]->clone();
     }
 }
+
+// void Canvas::exportfile()
+// {
+    
+// }
 
 void Canvas:: addShape(Shape* newShape){
     if(newShape==nullptr){
@@ -78,5 +92,20 @@ void Canvas::print(){
     for(int i=0;i<capacity;i++){
         if(shapes[i]!=nullptr)
             cout<<shapes[i]->toString()<<endl;
+    }
+}
+
+void Canvas::createExporter(const string &type)
+{
+    delete exportCanvas;
+    exportCanvas = nullptr;
+    if (type == "PNG") {
+        exportCanvas = new PNGExporter(this);
+    } 
+    else if (type == "PDF") {
+        exportCanvas = new PDFExporter(this);
+    } 
+    else {
+        exportCanvas = nullptr;
     }
 }

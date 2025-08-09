@@ -6,8 +6,13 @@
 
 
 class PDFExporter : public ExportCanvas {
-    private:
-        void saveToFile();
+    public:
+        PDFExporter(Canvas* canvas): ExportCanvas(canvas){}
+        virtual ~PDFExporter() = default;
+        void exportToFile() override;
+        void prepareCanvas() override;
+        void renderElements() override;
+        void saveToFile() override;  
 };
 
 #endif // PDFEXPORTER_H

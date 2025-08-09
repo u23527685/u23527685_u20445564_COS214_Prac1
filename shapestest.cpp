@@ -28,8 +28,11 @@ int main(){
     cout<<"40 shapes"<<endl;
     for(int i=0;i<20;i++){
         c.addShape(factory[i%3]->work());
+        //testing the png
     }
     c.print();
+    c.createExporter("PNG");
+
     c.undoAction(s.getMemento());
     cout<<"20 shapes"<<endl;
     c.print();
@@ -45,4 +48,5 @@ int main(){
     }
     delete[] factory;
     factory= nullptr;
+
 }

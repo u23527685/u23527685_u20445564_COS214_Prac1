@@ -6,13 +6,14 @@ using namespace std;
 class ExportCanvas{
     private:
         Canvas* canvas;
-        void prepareCanvas();
-        void renderElements();
-        virtual void saveToFile();
     public:
-        void exportToFile();
-        ExportCanvas(Canvas* canvas);
-        ~ExportCanvas();   
+        virtual void exportToFile() =0;
+        virtual void prepareCanvas() = 0;
+        virtual void renderElements() = 0;
+        virtual void saveToFile() =0;
+        ExportCanvas(Canvas* canvas) : canvas(canvas){}
+        virtual ~ExportCanvas();   
+        void printCanvas();
 };
 
 #endif

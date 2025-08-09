@@ -1,6 +1,35 @@
 #include "PDFExporter.h"
+#include "ExportCanvas.h"
 #include <iostream>
+#include <fstream>
+using namespace std;
 
-void PDFExporter::saveToFile() {
-    std::cout << "Saving canvas to PDF file..." << std::endl;
+void PDFExporter::exportToFile()
+{
+    cout << "Starting PDF export..."<< endl;
+    prepareCanvas();
+    renderElements();
+    saveToFile();
+    cout<< "PDF export completed!"<< endl;
+}
+
+void PDFExporter::prepareCanvas()
+{
+    cout << "Preparing canvas for PDF export..."<<endl;
+
+}
+
+void PDFExporter::renderElements()
+{
+    cout<<"Rendering elements to PDF..."<<endl;
+
+
+    cout<< "All elements converted to PDF format"<< endl;
+}
+
+void PDFExporter::saveToFile()
+{
+    cout<< "Saving PDF file..."<<endl;
+    
+
 }
