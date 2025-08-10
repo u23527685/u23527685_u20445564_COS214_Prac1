@@ -11,7 +11,7 @@ class TextboxFactory:public ShapeFactory{
     public:
         Shape* createShape();
         Shape* createShape(int length, int width, std::string &colour, int x, int y)override;
-        Shape* copyshape(Textbox &other);
+        Shape* copyshape(const Shape &other);
         void toString();
 };
 

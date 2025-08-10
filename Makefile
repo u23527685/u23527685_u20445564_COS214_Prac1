@@ -5,7 +5,7 @@ COVERAGE_FLAGS = --coverage -fprofile-arcs -ftest-coverage
 TARGET = shapestest
 
 # Source files
-SOURCES = shapestest.cpp \
+SOURCES = TestingMain.cpp \
           Canvas.cpp \
           Storage.cpp \
           ShapeFactory.cpp \
@@ -14,6 +14,7 @@ SOURCES = shapestest.cpp \
           TextboxFactory.cpp \
           Shape.cpp \
           Square.cpp \
+		  Memento.cpp\
           Rectangle.cpp \
           Textbox.cpp\
           ExportCanvas.cpp\
@@ -36,6 +37,7 @@ HEADERS = Canvas.h \
           Textbox.h\
           ExportCanvas.h\
           PNGExporter.h\
+		  Memento.h\
           PDFExporter.h
 
 # Default target

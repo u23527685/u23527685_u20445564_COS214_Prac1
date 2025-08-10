@@ -13,7 +13,7 @@ class RectangleFactory:public ShapeFactory{
     public:
         Shape* createShape()override;
         Shape* createShape(int length, int width, std::string &colour, int x, int y)override;
-        Shape* copyshape(Rectangle &other);
+        Shape* copyshape(const Shape &other);
         void toString();
 };
 

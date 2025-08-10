@@ -13,7 +13,6 @@ class ExportCanvas{
     public:
         void exportToFile();
         ExportCanvas(Canvas* canvas) : canvas(canvas){}
-        ExportCanvas();
         virtual ~ExportCanvas();   
         void printCanvas();
 };

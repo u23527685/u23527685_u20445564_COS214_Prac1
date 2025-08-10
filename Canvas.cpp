@@ -9,7 +9,7 @@ using namespace std;
 class Memento;
 
 Canvas::~Canvas(){
-    for(int i=0;i<size;i++){
+    for(int i=0;i<capacity;i++){
         if (shapes[i] != nullptr){
             delete shapes[i];
             shapes[i]=nullptr;
@@ -53,10 +53,9 @@ void Canvas:: undoAction(Memento* prev){
         while(size<=capacity){
             size=size*2;
         }
-        delete[] shapes;
-        size = capacity * 2;  // Give some extra space
-        shapes = new Shape*[size];
+        size = capacity * 2; 
     }
+    shapes = new Shape*[size];
     for(int i=0;i<size;i++){
         shapes[i] = nullptr;
     }

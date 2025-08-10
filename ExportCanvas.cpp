@@ -17,9 +17,5 @@ void ExportCanvas::exportToFile()
     saveToFile();
 }
 
-ExportCanvas::ExportCanvas(){
-    canvas=nullptr;
-}
-
 
 

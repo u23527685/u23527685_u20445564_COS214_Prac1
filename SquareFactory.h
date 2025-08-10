@@ -11,10 +11,10 @@ class Square;
 
 class SquareFactory:public ShapeFactory{
     public:
-        Shape* createShape();
-        Shape* createShape(int length, int width, std::string &colour, int x, int y);
-        Shape* copyshape(Square &other);
-        void toString();
+        Shape* createShape()override;
+        Shape* createShape(int length, int width, std::string &colour, int x, int y)override;
+        Shape* copyshape(const Shape &other)override;
+        void toString() override;
         
 };
 

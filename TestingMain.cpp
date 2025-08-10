@@ -52,12 +52,22 @@ int main(){
     d.createExporter("PDF");
     d.print();
     d.exportThis();
-     for(int i=0;i<20;i++){
+    for(int i=0;i<20;i++){
         d.getShape(i)->resizeShape(i,i);
         d.getShape(i)->moveShape(i,i);
         d.getShape(i)->setColour("changey");
     }
     cout<<"20 shapes changed"<<endl;
+    d.print();
+    for(int i=0;i<3;i++){
+        d.addShape(factory[i]->work(i*20,i*20,*(new string("newey")),i*20,i*20));
+    }
+
+    Textbox text= Textbox();
+    text.changeText("Setty");
+    cout<<"Textbox sett"<<endl;
+    cout<<text.toString()<<endl;
+    cout<<"23 shapes changed"<<endl;
     d.print();
 
     for(int i=0;i<3;i++){

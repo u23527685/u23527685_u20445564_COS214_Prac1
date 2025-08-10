@@ -9,8 +9,11 @@ Shape* SquareFactory::createShape(int length, int width, std::string &colour, in
     return new Square(length,width,colour,x,y);
 };
 
-Shape* SquareFactory::copyshape(Square &other){
-    return new Square(other);
+Shape* SquareFactory::copyshape(const Shape &other){
+    const Square* square=dynamic_cast<const Square*>(&other);
+    if(square)
+        return new Square(*square);
+    return nullptr;
 }
 
 void SquareFactory::toString(){

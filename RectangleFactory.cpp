@@ -9,8 +9,11 @@ Shape* RectangleFactory::createShape(int length, int width, std::string &colour,
     return new Rectangle(length,width,colour,x,y);
 };
 
-Shape* RectangleFactory::copyshape(Rectangle &other){
-    return new Rectangle(other);
+Shape* RectangleFactory::copyshape(const Shape &other){
+    const Rectangle* r= dynamic_cast<const Rectangle*>(&other);
+    if(r)
+        return new Rectangle(*r);
+    return nullptr;
 }
  void RectangleFactory::toString(){
     cout<<"A Rectangle has a length and a width wich are not the same distance and has 4 sides"<<endl;
