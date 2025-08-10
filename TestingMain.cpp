@@ -22,6 +22,7 @@ int main(){
         c.addShape(factory[i%3]->work());
     }
     c.print();
+    s.getMemento();
 
     s.saveMemento(c.captureCurrent());
 
@@ -41,6 +42,7 @@ int main(){
     for(int i=0;i<5;i++){
         c.addShape(factory[i%3]->work());
     }
+    s.saveMemento(c.captureCurrent());
     cout<<"25 shapes"<<endl;
     c.print();
     c.exportThis();
@@ -69,6 +71,11 @@ int main(){
     cout<<text.toString()<<endl;
     cout<<"23 shapes changed"<<endl;
     d.print();
+    for(int i=0;i<3;i++){
+        factory[i]->toString();
+        d.addShape(factory[i]->work(*d.getShape(i)));
+    }
+    
 
     for(int i=0;i<3;i++){
         delete factory[i];

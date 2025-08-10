@@ -12,8 +12,8 @@ class ShapeFactory{
         virtual Shape* createShape()=0;
         virtual Shape* createShape(int length, int width, std::string &colour, int x, int y)=0 ;
         virtual Shape* copyshape(const Shape &other)=0;
-        virtual void toString()=0;
     public:
+        virtual void toString()=0;
         virtual ~ShapeFactory();
         Shape* work();
         Shape* work(int length, int width, std::string &colour, int x, int y);
