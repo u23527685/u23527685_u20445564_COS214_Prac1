@@ -23,6 +23,7 @@ class Canvas{
         void print();
         void createExporter(const string& type);
         void exportThis();
+        Shape* getShape(int index);
     private:
         
         Shape** shapes;

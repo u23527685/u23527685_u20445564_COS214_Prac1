@@ -70,17 +70,13 @@ void Shape::setPosition_y(int y)
 
 void Shape::moveShape(int x, int y)
 {
-    position_x = x;
-    position_y = y;
+    setPosition_x(x);
+    setPosition_y(y);
 }
 
 void Shape::resizeShape(int len, int w)
 {
-    length = len;
-    width = w;
+    setLength(len);
+    setWidth(w);
 }
 
-void Shape::recolourShape(std::string &col)
-{
-    colour = col;
-}

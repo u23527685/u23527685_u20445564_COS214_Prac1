@@ -1,7 +1,6 @@
 using namespace std;
 #include "Canvas.h"
 #include "Memento.h"
-#include "Memento.cpp"
 #include "ExportCanvas.h"
 #include "PDFExporter.h"
 #include "PNGExporter.h"
@@ -126,3 +125,7 @@ void Canvas::exportThis()
     if(exportCanvas!=nullptr)
         exportCanvas->exportToFile();
 }
+
+ Shape* Canvas:: getShape(int index){
+    return shapes[index];
+ }

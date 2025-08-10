@@ -52,6 +52,13 @@ int main(){
     d.createExporter("PDF");
     d.print();
     d.exportThis();
+     for(int i=0;i<20;i++){
+        d.getShape(i)->resizeShape(i,i);
+        d.getShape(i)->moveShape(i,i);
+        d.getShape(i)->setColour("changey");
+    }
+    cout<<"20 shapes changed"<<endl;
+    d.print();
 
     for(int i=0;i<3;i++){
         delete factory[i];

@@ -6,6 +6,7 @@ using namespace std;
 class ExportCanvas{
     private:
         Canvas* canvas;
+    protected:
         virtual void prepareCanvas() = 0;
         virtual void renderElements() = 0;
         virtual void saveToFile() =0;
