@@ -188,6 +188,3 @@ help:
 	@echo "  1. make coverage-quick    # Quick percentage overview"
 	@echo "  2. make run-coverage      # Detailed text report"
 	@echo "  3. make coverage-html     # Beautiful HTML report"
-
-# Phony targets (not real files)
-.PHONY: all run debug run-debug coverage run-coverage coverage-html coverage-quick test-coverage clean clear clean-all clean-coverage rebuild rebuild-coverage install help

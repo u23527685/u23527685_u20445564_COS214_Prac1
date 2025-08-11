@@ -16,3 +16,7 @@ Shape* ShapeFactory::work(int length, int width, std::string &colour, int x, int
 Shape* ShapeFactory::work(const Shape &other){
     return copyshape(other);
 }
+
+void ShapeFactory::print(){
+    toString();
+}

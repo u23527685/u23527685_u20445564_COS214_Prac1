@@ -14,7 +14,7 @@ class RectangleFactory:public ShapeFactory{
         Shape* createShape()override;
         Shape* createShape(int length, int width, std::string &colour, int x, int y)override;
         Shape* copyshape(const Shape &other);
-        void toString();
+        virtual void toString();
 };
 
 #endif

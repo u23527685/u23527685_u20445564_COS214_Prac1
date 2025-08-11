@@ -125,6 +125,19 @@ void Canvas::exportThis()
         exportCanvas->exportToFile();
 }
 
- Shape* Canvas:: getShape(int index){
+Shape* Canvas:: getShape(int index){
     return shapes[index];
  }
+ 
+void Canvas::createShape(ShapeFactory* factory){
+    addShape(factory->work());
+ }
+
+void Canvas::createShape(ShapeFactory* factory,int l, int w, string &colour, int x, int y){
+    addShape(factory->work(l,w,colour,x,y));
+ }
+
+void Canvas::createShape(ShapeFactory* factory,const Shape &other){
+    addShape(factory->work(other));
+ }
+

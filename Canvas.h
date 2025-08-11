@@ -4,6 +4,7 @@ using namespace std;
 #include "Shape.h"
 #include "Memento.h"
 #include "Storage.h"
+#include "ShapeFactory.h"
 
 class Shape;
 class Memento;
@@ -11,6 +12,7 @@ class Storage;
 class ExportCanvas;
 class PNGExporter;
 class PDFExporter;
+class ShapeFactory;
 
 class Canvas{
     public:
@@ -19,8 +21,10 @@ class Canvas{
         Memento* captureCurrent();
         void undoAction(Memento* prev);
         void exportfile();
-        void addShape(Shape* newShape);
         void print();
+        void createShape(ShapeFactory* factory);
+        void createShape(ShapeFactory* factory,const Shape &other);
+        void createShape(ShapeFactory* factory,int l, int w, string &colour, int x, int y);
         void createExporter(const string& type);
         void exportThis();
         Shape* getShape(int index);
@@ -30,6 +34,7 @@ class Canvas{
         int size;
         int capacity=0;
         ExportCanvas* exportCanvas;
+        void addShape(Shape* newShape);
 };
 
 #endif

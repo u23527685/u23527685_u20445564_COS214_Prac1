@@ -10,10 +10,7 @@ class Canvas;
 class Memento{
     friend class Canvas;
     public:
-        Memento();
-        Memento(const Memento &other);
         Memento(Shape** elements,int cap);
-        bool isNULL();
         ~Memento();
         Shape** getShapes();
     private:
