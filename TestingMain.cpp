@@ -106,13 +106,19 @@ void demo(){
     c.undoAction(s.getMemento());
     cout<<"5 shapes"<<endl;
     c.print();
+    c.undoAction(s.getMemento());
+    cout<<"4 shapes"<<endl;
+    c.print();
+    c.undoAction(s.getMemento());
+    cout<<"3 shapes"<<endl;
+    c.print();
     for(int i=0;i<3;i++){
         factory[i]->print();
     }
     s.saveMemento(c.captureCurrent());
     Canvas d= Canvas();
-    cout<<"6 shapes"<<endl;
-    for(int i=0;i<20;i++){
+    cout<<"5 shapes"<<endl;
+    for(int i=0;i<6;i++){
         d.createShape(factory[i%3]);
     }
     d.createExporter("PDF");
