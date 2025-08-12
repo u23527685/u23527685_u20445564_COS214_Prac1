@@ -20,7 +20,6 @@ class Canvas{
         ~Canvas();
         Memento* captureCurrent();
         void undoAction(Memento* prev);
-        void exportfile();
         void print();
         void createShape(ShapeFactory* factory);
         void createShape(ShapeFactory* factory,const Shape &other);

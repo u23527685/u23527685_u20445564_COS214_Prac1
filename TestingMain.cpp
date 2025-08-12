@@ -96,13 +96,13 @@ void demo(){
     factory[2]= new TextboxFactory();
     cout<<"6 shapes"<<endl;
     for(int i=0;i<6;i++){
-        c.createShape(factory[i%3]);
         s.saveMemento(c.captureCurrent());
+        c.createShape(factory[i%3]);
     }
     c.print();
     c.createExporter("PNG");
     c.exportThis();
-
+    cout<<"This is where thr object diagram shows this point of the enviroment"<<endl;
     c.undoAction(s.getMemento());
     cout<<"5 shapes"<<endl;
     c.print();
@@ -158,7 +158,7 @@ void demo(){
 }
 
 int main(){
-    //test();
+    test();
     demo();
     return 0;
 }

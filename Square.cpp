@@ -11,7 +11,7 @@ Square::Square(const Square &other):Shape(other){
 
 }
 Square::Square(int length, int width, std::string &colour, int x, int y)
-    : Shape(length,width,colour,x,y) {}
+    : Shape(length,length,colour,x,y) {}
 
 Square::~Square() {}
 

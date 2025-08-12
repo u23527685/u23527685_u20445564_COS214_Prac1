@@ -31,7 +31,6 @@ public:
 
     void moveShape(int x, int y);
     void resizeShape(int len, int w);
-    void recolourShape(std::string &col);
 
     virtual Shape* clone()=0;
     virtual std::string toString()=0;
